@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8lyiwto3ir1u"]
+
+[ext_resource type="Script" uid="uid://7rx5dh2y4631" path="res://scenes/pause_menu.gd" id="1_kukqi"]
+[ext_resource type="FontFile" uid="uid://b8tnrbyw6v3i2" path="res://art/pixel2.ttf" id="1_myx47"]
+[ext_resource type="Script" uid="uid://bvlrvl4ne6xj6" path="res://scripts/button.gd" id="2_kukqi"]
+[ext_resource type="AudioStream" uid="uid://6enlwfh2mi4i" path="res://audio/UI Accept 005.wav" id="4_5d2l8"]
+[ext_resource type="AudioStream" uid="uid://dlp8yim8wur0f" path="res://audio/UI Accept 006.wav" id="5_7l7mv"]
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_kukqi")
+
+[node name="Panel" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -38.0
+offset_right = 50.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical = true
+
+[node name="ResumeButton" type="Button" parent="Panel"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_myx47")
+theme_override_font_sizes/font_size = 32
+text = "Resume"
+script = ExtResource("2_kukqi")
+
+[node name="QuitButton" type="Button" parent="Panel"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_myx47")
+theme_override_font_sizes/font_size = 32
+text = "Quit"
+script = ExtResource("2_kukqi")
+
+[node name="HoverSfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_5d2l8")
+
+[node name="ClickSfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_7l7mv")

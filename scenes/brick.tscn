@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://bg8kgo08tuvu2"]
+
+[ext_resource type="Script" uid="uid://bd1n78d0hyrlu" path="res://scripts/brick.gd" id="1_0w5h4"]
+[ext_resource type="Texture2D" uid="uid://yx6im2rwekms" path="res://art/brick.png" id="2_7mekc"]
+[ext_resource type="AudioStream" uid="uid://cxee18ke288f8" path="res://audio/dink.wav" id="3_7mekc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5p85m"]
+size = Vector2(32, 16)
+
+[sub_resource type="Gradient" id="Gradient_5p85m"]
+offsets = PackedFloat32Array(0, 0.5958904, 0.96575344)
+colors = PackedColorArray(0.3996846, 0.0924037, 0.9999998, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="Brick" type="RigidBody2D" groups=["brick"]]
+scale = Vector2(0.9, 0.9)
+gravity_scale = 0.0
+script = ExtResource("1_0w5h4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_7mekc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5p85m")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 50
+lifetime = 0.5
+one_shot = true
+preprocess = 0.5
+randomness = 1.0
+draw_order = 1
+emission_shape = 1
+emission_sphere_radius = 24.0
+gravity = Vector2(0, -500)
+linear_accel_min = 0.1
+linear_accel_max = 0.1
+scale_amount_min = 0.0
+scale_amount_max = 2.0
+color_ramp = SubResource("Gradient_5p85m")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_7mekc")

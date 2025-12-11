@@ -1,0 +1,9 @@
+res://player/player.tscn::54b36928692f3ee78bf58dbb686af13f::1765395953::res://.godot/exported/133200997/export-753d15e03e0182f9d550ac833b42bb41-player.scn
+res://projectile/ball.tscn::35f2ebf006073f5029d94bc04d6c43a4::1765395756::res://.godot/exported/133200997/export-5cbd06f669505962b4d56d014a4560be-ball.scn
+res://scenes/brick.tscn::0958735bdff047c89eaab07a8118e34b::1765397064::res://.godot/exported/133200997/export-c12b08fc82511359f18df1646be0300b-brick.scn
+res://scenes/combo_manager.tscn::4b23e3f88aa5e81f692a1bd2c465a9da::1765393164::res://.godot/exported/133200997/export-2dc2306d8a066205db123dda02ed93b3-combo_manager.scn
+res://scenes/game_manager.tscn::7444a5bbcee61e5d41e3dbe71e87b3c7::1765221284::res://.godot/exported/133200997/export-18773aed85e32f6f60d8a5aa586802e3-game_manager.scn
+res://scenes/lava.tscn::84a6f440ebed24f8126ad91dda7a214f::1765193182::res://.godot/exported/133200997/export-1738d7d0c5731bd0acd6dadd64cd9a45-lava.scn
+res://scenes/main.tscn::a19351b59a00d82b3d9d253f94d7f6bd::1765397091::res://.godot/exported/133200997/export-3ad5c15c4f3250da0cc7c1af1770d85f-main.scn
+res://scenes/main_menu.tscn::422440fb6a0dc84c3342ed0aa58d304c::1765394321::res://.godot/exported/133200997/export-ea5c6ad4629af728dc514cefde332394-main_menu.scn
+res://scenes/pause_menu.tscn::101dafded92ab2b2e2230436ecfa6fc3::1765394105::res://.godot/exported/133200997/export-ca2c2284eb591e72162d67219a0d2f87-pause_menu.scn

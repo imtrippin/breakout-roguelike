@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmixt027aj03e"]
+
+[ext_resource type="Script" uid="uid://bn4l5my1oviuj" path="res://projectile/projectile.gd" id="1_qxf0c"]
+[ext_resource type="Texture2D" uid="uid://dk3ukx5bes13c" path="res://art/circle2.png" id="3_dr2av"]
+[ext_resource type="AudioStream" uid="uid://cnwq5g6g3ulxe" path="res://audio/plink.wav" id="4_2fd3i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_186t8"]
+radius = 2.0
+
+[sub_resource type="Curve" id="Curve_4qhmq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.74725276, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_4qhmq"]
+offsets = PackedFloat32Array(0, 0.7389277, 1)
+colors = PackedColorArray(0.019607844, 1, 1, 0.64705884, 1, 1, 1, 0.64705884, 1, 1, 1, 0)
+
+[node name="Projectile" type="CharacterBody2D"]
+script = ExtResource("1_qxf0c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_dr2av")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_186t8")
+
+[node name="WallHitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_2fd3i")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+visible = false
+z_index = -1
+amount = 1000
+texture = ExtResource("3_dr2av")
+lifetime = 0.2
+emission_shape = 1
+emission_sphere_radius = 2.0
+gravity = Vector2(0, 0)
+scale_amount_min = 0.2
+scale_amount_max = 0.3
+scale_amount_curve = SubResource("Curve_4qhmq")
+color = Color(1, 1, 1, 0.59607846)
+color_ramp = SubResource("Gradient_4qhmq")

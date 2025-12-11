@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=3 uid="uid://djc2n2r1e5m0y"]
+
+[ext_resource type="Shader" uid="uid://y3em38tufed" path="res://materials_and_shaders/lava.gdshader" id="1_a5s42"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dw3wf"]
+shader = ExtResource("1_a5s42")
+shader_parameter/lava_top_color = Color(1, 0.7, 0.3, 1)
+shader_parameter/lava_mid_color = Color(1, 0.4, 0, 1)
+shader_parameter/lava_bottom_color = Color(0.4, 0, 0, 1)
+shader_parameter/surface_height = 0.400000019
+shader_parameter/wave_amplitude = 0.02000000095
+shader_parameter/wave_frequency = 5.0000002375
+shader_parameter/wave_speed = 1.0000000475
+shader_parameter/flow_speed = 1.5
+
+[sub_resource type="Gradient" id="Gradient_dw3wf"]
+offsets = PackedFloat32Array(0, 0.9947644)
+colors = PackedColorArray(0.8939428, 0.50596136, 0.24664122, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_snnrc"]
+gradient = SubResource("Gradient_dw3wf")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.74786323, 0.18803419)
+
+[sub_resource type="GDScript" id="GDScript_dw3wf"]
+script/source = "class_name LightFlicker extends PointLight2D
+
+@export var flicker_intensity : float = 0.1
+@export var flicker_frequency : float = 0.2
+var og_energy : float = 1.0
+
+
+func _ready() -> void:
+	og_energy = energy
+	flicker()
+	pass
+
+func flicker() -> void:
+	var new_value : float = randf_range( -1, 1 ) * flicker_intensity
+	energy = og_energy + new_value
+	await get_tree().create_timer( 
+			flicker_frequency + 
+			randf_range( flicker_frequency * -0.3, flicker_frequency * 0.3 )
+		).timeout
+	flicker()
+	pass
+"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_snnrc"]
+load_path = "res://.godot/imported/circle.png-10953cad44a8947fbdd4128a631e9e52.ctex"
+
+[sub_resource type="Gradient" id="Gradient_snnrc"]
+offsets = PackedFloat32Array(0, 0.4829932, 0.70068026, 0.877551)
+colors = PackedColorArray(0.6509804, 0.03137255, 0, 1, 1, 0.43137255, 0, 1, 1, 0.9333369, 0.3133042, 1, 1, 1, 0.24526232, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_f10td"]
+gradient = SubResource("Gradient_snnrc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3w25c"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, -10, 0)
+emission_shape = 3
+emission_box_extents = Vector3(100, 1, 1)
+angle_min = -89.99999
+angle_max = 90.000015
+gravity = Vector3(0, -30, 0)
+linear_accel_min = -5.000002
+linear_accel_max = 14.999997
+radial_accel_min = 9.999997
+radial_accel_max = 24.999998
+tangential_accel_min = -2.2351742e-06
+tangential_accel_max = 4.9999976
+scale_min = 0.099999994
+scale_max = 0.29999998
+color_ramp = SubResource("GradientTexture1D_f10td")
+turbulence_enabled = true
+
+[node name="Lava" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_dw3wf")
+offset_right = 199.0
+offset_bottom = 204.0
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(102, 177)
+texture = SubResource("GradientTexture2D_snnrc")
+texture_scale = 2.0
+script = SubResource("GDScript_dw3wf")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(100, 181)
+amount = 20
+texture = SubResource("CompressedTexture2D_snnrc")
+lifetime = 4.0
+randomness = 0.74
+process_material = SubResource("ParticleProcessMaterial_3w25c")

@@ -1,0 +1,14 @@
+CPUParticles2D
+AudioStreamPlayer2D
+Button
+BoxContainer
+CharacterBody2D
+RigidBody2D
+HBoxContainer
+Control
+CanvasLayer
+Timer
+Label
+Node2D
+Sprite2D
+GPUParticles2D
