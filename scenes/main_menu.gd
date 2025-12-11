@@ -12,9 +12,11 @@ var tween: Tween
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	start_button.grab_focus()
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	get_tree().paused = true
 	visible = true
+	await get_tree().process_frame
+	start_button.grab_focus()
 	
 	start_button.pressed.connect(_on_start_pressed)
 	quit_button.pressed.connect(_on_quit_pressed)

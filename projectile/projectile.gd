@@ -13,7 +13,6 @@ func _ready() -> void:
 	velocity = Vector2(speed * -1, speed)
 	
 func _physics_process(delta: float) -> void:
-	var _v : Vector2 = velocity
 	if is_active:
 		var collision = move_and_collide(velocity * delta)
 		
@@ -33,8 +32,7 @@ func _physics_process(delta: float) -> void:
 		rotation += velocity.length() * spin_strength * delta
 		
 func game_over():
-	GameManager.score = 0
-	GameManager.level = 1
+	GameManager.reset_run()
 	await get_tree().create_timer(1).timeout
 	get_tree().reload_current_scene()
 	
@@ -43,3 +41,9 @@ func _play_wall_hit_sound() -> void:
 
 func _on_area_2d_body_shape_entered(_body_rid: RID, _body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:
 	game_over()
+	
+func launch(direction: Vector2) -> void:
+	# Use this whenever you want the ball to start moving.
+	is_active = true
+	speed = 300.0 + (20 * GameManager.level)
+	velocity = direction.normalized() * speed

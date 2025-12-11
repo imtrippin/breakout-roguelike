@@ -14,7 +14,6 @@ func _process(_delta: float) -> void:
 	pass
 
 func hit(): 
-
 	GameManager.add_points(1)
 	combo_manager.register_brick_hit()
 	$AudioStreamPlayer2D.pitch_scale = randf_range(0.9, 1.1)
@@ -25,11 +24,10 @@ func hit():
 
 	var bricks_left = get_tree().get_nodes_in_group("brick")
 	
-	if bricks_left.size() == 1:
+	if bricks_left.size() <= 20:
 		get_parent().get_node("Ball").is_active = false
 		await get_tree().create_timer(1).timeout
-		GameManager.level = GameManager.level + 1
-		get_tree().reload_current_scene()
+		get_tree().root.get_node("Main").next_level()
 	else:
 		
 		await get_tree().create_timer(1).timeout

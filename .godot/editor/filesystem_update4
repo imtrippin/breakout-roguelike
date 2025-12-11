@@ -1,0 +1,14 @@
+res://materials_and_shaders/night_sky.gdshader
+res://materials_and_shaders/lava.gdshader
+res://scenes/brick.gdshader
+res://scenes/upgrade_menu.tscn
+res://scenes/upgrade_menu.gd
+res://scenes/main.tscn
+res://player/player.tscn
+res://player/plane.gd
+res://scripts/game_manager.gd
+res://scripts/level.gd
+res://projectile/ball.tscn
+res://scenes/main_menu.gd
+res://projectile/projectile.gd
+res://scripts/brick.gd

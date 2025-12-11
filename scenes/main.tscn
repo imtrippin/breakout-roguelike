@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://e3oxhdshwh1u"]
+[gd_scene load_steps=15 format=3 uid="uid://e3oxhdshwh1u"]
 
 [ext_resource type="Script" uid="uid://cs1sjn688636y" path="res://scripts/level.gd" id="1_jyhfs"]
 [ext_resource type="Shader" uid="uid://boqhjcimonddn" path="res://materials_and_shaders/night_sky.gdshader" id="2_tbgi4"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://4y14bjgehtlb" path="res://scenes/combo_manager.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://c8lyiwto3ir1u" path="res://scenes/pause_menu.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://c0uwq5lyg3110" path="res://scenes/main_menu.tscn" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://clmw3875hyui0" path="res://scenes/upgrade_menu.tscn" id="8_tipki"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7mycd"]
 shader = ExtResource("2_tbgi4")
@@ -93,5 +94,17 @@ offset_top = 257.0
 offset_right = 528.0
 offset_bottom = 257.0
 size_flags_horizontal = 4
+
+[node name="UpgradeMenu" parent="." instance=ExtResource("8_tipki")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 587.0
+offset_top = 286.0
+offset_right = 587.0
+offset_bottom = 286.0
+ball_scene = ExtResource("4_o6xl0")
 
 [connection signal="body_shape_entered" from="Area2D" to="Ball" method="_on_area_2d_body_shape_entered"]
