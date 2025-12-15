@@ -73,7 +73,12 @@ shape = SubResource("RectangleShape2D_1bvp3")
 position = Vector2(576.5, -9)
 shape = SubResource("RectangleShape2D_lquwl")
 
+[node name="TopWall2" type="CollisionShape2D" parent="Walls" groups=["wall"]]
+position = Vector2(571, 614)
+shape = SubResource("RectangleShape2D_lquwl")
+
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 position = Vector2(0, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
