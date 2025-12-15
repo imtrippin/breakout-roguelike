@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://47i02e3kk8d3"
+path="res://.godot/imported/HeavyElectronic Vol4 Killtacular Main.wav-5f55e4259edee05dd03cdb1aaa39a01f.sample"
+
+[deps]
+
+source_file="res://audio/HeavyElectronic Vol4 Killtacular Main.wav"
+dest_files=["res://.godot/imported/HeavyElectronic Vol4 Killtacular Main.wav-5f55e4259edee05dd03cdb1aaa39a01f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

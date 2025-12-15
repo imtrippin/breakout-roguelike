@@ -1,6 +1,9 @@
+ColorRect
+CanvasLayer
+Label
+AudioStreamPlayer2D
 CharacterBody2D
 StaticBody2D
-AudioStreamPlayer2D
 HBoxContainer
 Button
 Panel
@@ -8,7 +11,5 @@ CPUParticles2D
 BoxContainer
 RigidBody2D
 Control
-CanvasLayer
 Timer
-Label
 Node2D

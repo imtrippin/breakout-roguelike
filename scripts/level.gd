@@ -3,6 +3,7 @@ extends Node2D
 @onready var paddle: CharacterBody2D = $Player
 @onready var ball: CharacterBody2D = $Ball
 
+
 var columns = 32
 var rows = 3
 var margin = 50
@@ -11,6 +12,7 @@ var changing_level := false
 func _ready() -> void:
 	setup_level()
 	_reset_ball_and_paddle()
+	
 
 func setup_level() -> void:
 	rows = 2 + GameManager.level

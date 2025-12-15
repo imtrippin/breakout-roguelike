@@ -19,6 +19,7 @@ config/features=PackedStringArray("4.5", "Forward Plus")
 GameManager="*res://scenes/game_manager.tscn"
 ComboManager="*res://scenes/combo_manager.tscn"
 UpgradeManager="*res://scenes/upgrade_menu.tscn"
+ProgressionManager="*res://scripts/progression_manager.gd"
 
 [display]
 

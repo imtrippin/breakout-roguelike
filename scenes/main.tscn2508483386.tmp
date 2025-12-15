@@ -1,0 +1,117 @@
+[gd_scene load_steps=15 format=3 uid="uid://e3oxhdshwh1u"]
+
+[ext_resource type="Script" uid="uid://cs1sjn688636y" path="res://scripts/level.gd" id="1_jyhfs"]
+[ext_resource type="Shader" uid="uid://boqhjcimonddn" path="res://materials_and_shaders/night_sky.gdshader" id="2_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://juw2nogud4im" path="res://player/player.tscn" id="3_tefeu"]
+[ext_resource type="PackedScene" uid="uid://dmixt027aj03e" path="res://projectile/ball.tscn" id="4_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://4y14bjgehtlb" path="res://scenes/combo_manager.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://c8lyiwto3ir1u" path="res://scenes/pause_menu.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://c0uwq5lyg3110" path="res://scenes/main_menu.tscn" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://clmw3875hyui0" path="res://scenes/upgrade_menu.tscn" id="8_tipki"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7mycd"]
+shader = ExtResource("2_tbgi4")
+shader_parameter/sky_top = Color(0, 0, 0, 1)
+shader_parameter/sky_bottom = Color(0.015686275, 0.015686275, 0.09019608, 1)
+shader_parameter/nebula_color_1 = Color(0.25, 0.1, 0.35, 1)
+shader_parameter/nebula_color_2 = Color(0.05, 0.3, 0.55, 1)
+shader_parameter/nebula_intensity = 0.7
+shader_parameter/star_color_big = Color(1.2, 1.1, 1, 1)
+shader_parameter/star_color_small = Color(0.7, 0.9, 1.2, 1)
+shader_parameter/star_density_big = 55.0
+shader_parameter/star_density_small = 110.0
+shader_parameter/twinkle_speed_big = 2.0
+shader_parameter/twinkle_speed_small = 4.5
+shader_parameter/drift_big = 0.01
+shader_parameter/drift_small = 0.02
+shader_parameter/star_intensity = 0.2
+shader_parameter/vignette_strength = 0.7
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_272bh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
+size = Vector2(20, 19.677616)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(20, 646)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
+size = Vector2(1151, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
+size = Vector2(1150, 20)
+
+[node name="Main" type="Node2D"]
+z_index = 3
+script = ExtResource("1_jyhfs")
+
+[node name="ComboManager" parent="." instance=ExtResource("5_tbgi4")]
+position = Vector2(562, 296)
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -2
+material = SubResource("ShaderMaterial_7mycd")
+position = Vector2(576.25, 326.75)
+scale = Vector2(1153.5, 654.50006)
+texture = SubResource("CanvasTexture_272bh")
+
+[node name="Player" parent="." instance=ExtResource("3_tefeu")]
+position = Vector2(575, 556)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="Ball" parent="." instance=ExtResource("4_o6xl0")]
+position = Vector2(544, 294)
+scale = Vector2(3, 3)
+
+[node name="Walls" type="StaticBody2D" parent="." groups=["wall"]]
+
+[node name="LeftWall" type="CollisionShape2D" parent="Walls" groups=["wall"]]
+position = Vector2(-10, 323.49997)
+scale = Vector2(1, 32.879997)
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="RightWall" type="CollisionShape2D" parent="Walls" groups=["wall"]]
+position = Vector2(1162, 324)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="TopWall" type="CollisionShape2D" parent="Walls" groups=["wall"]]
+position = Vector2(576.5, -9)
+shape = SubResource("RectangleShape2D_lquwl")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(576, 658)
+shape = SubResource("RectangleShape2D_7mycd")
+
+[node name="PauseMenu" parent="." instance=ExtResource("6_tefeu")]
+visible = true
+offset_left = 571.0
+offset_top = 293.0
+offset_right = 571.0
+offset_bottom = 293.0
+
+[node name="MainMenu" parent="." instance=ExtResource("7_o6xl0")]
+process_mode = 3
+offset_left = 528.0
+offset_top = 257.0
+offset_right = 528.0
+offset_bottom = 257.0
+size_flags_horizontal = 4
+
+[node name="UpgradeMenu" parent="." instance=ExtResource("8_tipki")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 587.0
+offset_top = 286.0
+offset_right = 587.0
+offset_bottom = 286.0
+ball_scene = ExtResource("4_o6xl0")
+
+[connection signal="body_shape_entered" from="Area2D" to="Ball" method="_on_area_2d_body_shape_entered"]

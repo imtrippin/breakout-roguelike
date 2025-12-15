@@ -1,0 +1,16 @@
+res://player/player.tscn
+res://materials_and_shaders/night_sky.gdshader
+res://materials_and_shaders/lava.gdshader
+res://materials_and_shaders/brick.gdshader
+res://materials_and_shaders/iron_balls.gdshader
+res://player/paddle_glow.gdshader
+res://player/plane.gd
+res://projectile/ball.tscn
+res://projectile/projectile.gd
+res://scenes/main.tscn
+res://materials_and_shaders/crt_fullscreen_shader.gdshader
+res://scripts/brick.gd
+res://scripts/game_manager.gd
+res://scenes/game_manager.tscn
+res://scenes/upgrade_menu.gd
+res://scenes/combo_manager.tscn

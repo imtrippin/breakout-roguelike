@@ -8,42 +8,65 @@ var dir = Vector2.DOWN
 var is_active = true
 var spin_strength = 0.015
 
+var heavy_mode: bool = false
+
 func _ready() -> void:
-	speed = speed + (20 * GameManager.level )
+	add_to_group("ball")
+	speed = speed + (20 * GameManager.level)
 	velocity = Vector2(speed * -1, speed)
-	
+
+	GameManager.register_ball(self)  # every ball registers itself
+
+
 func _physics_process(delta: float) -> void:
 	if is_active:
 		var collision = move_and_collide(velocity * delta)
-		
+
 		if collision:
-			velocity = velocity.bounce(collision.get_normal())
-			if collision.get_collider().has_method("hit"):
-				collision.get_collider().hit()
-			_play_wall_hit_sound()
-		
-			
+			var collider := collision.get_collider()
+
+			if heavy_mode and collider.is_in_group("brick"):
+				if collider.has_method("hit"):
+					collider.hit()
+			else:
+				velocity = velocity.bounce(collision.get_normal())
+				if collider.has_method("hit"):
+					collider.hit()
+				if collider.has_method("flash_hit"):
+					collider.flash_hit(collision.get_position())
+				_play_wall_hit_sound()
+
 		if velocity.y > 0 and velocity.y < 100:
 			velocity.y = -200
-			
+
 		if velocity.x == 0:
 			velocity.x = -200
 
 		rotation += velocity.length() * spin_strength * delta
-		
-func game_over():
-	GameManager.reset_run()
-	await get_tree().create_timer(1).timeout
-	get_tree().reload_current_scene()
-	
+
+
 func _play_wall_hit_sound() -> void:
 	wall_hit_sound.play()
 
-func _on_area_2d_body_shape_entered(_body_rid: RID, _body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:
-	game_over()
+
+func _on_area_2d_body_shape_entered(
+	_body_rid: RID,
+	_body: Node2D,
+	_body_shape_index: int,
+	_local_shape_index: int
+) -> void:
+	# THIS ball died
+	is_active = false
+	GameManager.unregister_ball()
+	queue_free()
 	
+
+
 func launch(direction: Vector2) -> void:
-	# Use this whenever you want the ball to start moving.
 	is_active = true
 	speed = 300.0 + (20 * GameManager.level)
 	velocity = direction.normalized() * speed
+
+
+func enable_heavy_mode() -> void:
+	heavy_mode = true

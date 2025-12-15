@@ -1,8 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://juw2nogud4im"]
+[gd_scene load_steps=7 format=3 uid="uid://juw2nogud4im"]
 
 [ext_resource type="Script" uid="uid://bberachwpabs5" path="res://player/plane.gd" id="1_dpar4"]
+[ext_resource type="Shader" uid="uid://cufx5m8efa3bf" path="res://player/paddle_glow.gdshader" id="2_yw30f"]
 [ext_resource type="Texture2D" uid="uid://cm4du50urfpoy" path="res://art/bb.png" id="3_3s85t"]
 [ext_resource type="AudioStream" uid="uid://dxgommnbkl4e6" path="res://audio/plunk.wav" id="3_bha0w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qjkh3"]
+shader = ExtResource("2_yw30f")
+shader_parameter/core_color = Color(0.2, 0.6, 1, 1)
+shader_parameter/glow_color = Color(0.8, 1, 1.5, 1)
+shader_parameter/line_density = 60.0
+shader_parameter/line_speed = 2.0
+shader_parameter/line_strength = 0.7
+shader_parameter/blue_threshold = 0.2
+shader_parameter/blue_softness = 0.15
+shader_parameter/flash_color = Color(1.8, 1.8, 1.8, 1)
+shader_parameter/flash_amount = 0.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4x4bl"]
 radius = 8.0
@@ -12,6 +25,7 @@ height = 76.0
 script = ExtResource("1_dpar4")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_qjkh3")
 scale = Vector2(2, 1.5)
 texture = ExtResource("3_3s85t")
 

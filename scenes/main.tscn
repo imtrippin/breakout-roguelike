@@ -11,14 +11,21 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7mycd"]
 shader = ExtResource("2_tbgi4")
-shader_parameter/star_density = 10.0
-shader_parameter/star_intensity = 0.2
-shader_parameter/twinkle_speed = 0.5
-shader_parameter/star_fill = 0.4
 shader_parameter/sky_top = Color(0, 0, 0, 1)
 shader_parameter/sky_bottom = Color(0.015686275, 0.015686275, 0.09019608, 1)
-shader_parameter/star_color = Color(0.8, 0.9, 1.2, 1)
-shader_parameter/drift_speed = 0.005
+shader_parameter/nebula_color_1 = Color(0.25, 0.1, 0.35, 1)
+shader_parameter/nebula_color_2 = Color(0.05, 0.3, 0.55, 1)
+shader_parameter/nebula_intensity = 0.7
+shader_parameter/star_color_big = Color(1.2, 1.1, 1, 1)
+shader_parameter/star_color_small = Color(0.7, 0.9, 1.2, 1)
+shader_parameter/star_density_big = 55.0
+shader_parameter/star_density_small = 110.0
+shader_parameter/twinkle_speed_big = 2.0
+shader_parameter/twinkle_speed_small = 4.5
+shader_parameter/drift_big = 0.01
+shader_parameter/drift_small = 0.02
+shader_parameter/star_intensity = 0.2
+shader_parameter/vignette_strength = 0.7
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_272bh"]
 
@@ -73,12 +80,7 @@ shape = SubResource("RectangleShape2D_1bvp3")
 position = Vector2(576.5, -9)
 shape = SubResource("RectangleShape2D_lquwl")
 
-[node name="TopWall2" type="CollisionShape2D" parent="Walls" groups=["wall"]]
-position = Vector2(571, 614)
-shape = SubResource("RectangleShape2D_lquwl")
-
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 position = Vector2(0, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
