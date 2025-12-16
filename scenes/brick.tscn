@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bd1n78d0hyrlu" path="res://scripts/brick.gd" id="1_0w5h4"]
 [ext_resource type="Texture2D" uid="uid://yx6im2rwekms" path="res://art/brick.png" id="2_7mekc"]
-[ext_resource type="AudioStream" uid="uid://cxee18ke288f8" path="res://audio/dink.wav" id="3_7mekc"]
+[ext_resource type="AudioStream" uid="uid://b4f12l5hk8dk7" path="res://audio/Score Count Up Single.wav" id="3_7mekc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5p85m"]
 size = Vector2(32, 16)

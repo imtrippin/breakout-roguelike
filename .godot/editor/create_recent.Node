@@ -1,4 +1,6 @@
 ColorRect
+Sprite2D
+Line2D
 CanvasLayer
 Label
 AudioStreamPlayer2D
@@ -10,6 +12,3 @@ Panel
 CPUParticles2D
 BoxContainer
 RigidBody2D
-Control
-Timer
-Node2D

@@ -65,3 +65,4 @@ func upgrade_width(_amount: float) -> void:
 func _update_width() -> void:
 	player.scale.x = player.scale.x * 2
 	get_tree()
+	

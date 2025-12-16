@@ -49,37 +49,49 @@ func _build_upgrade_pool() -> void:
 	{
 		"name": "Bigger Ball",
 		"apply": func() -> void:
-			var ball = get_tree().root.get_node("Main/Ball")
-			ball.scale *= 2.0
+			var balls := get_tree().get_nodes_in_group("ball")
+			for b in balls:
+				if b is Node2D:
+					(b as Node2D).scale *= 2.0
 	},
 	{
 		"name": "Extra Ball",
 		"apply": func() -> void:
-			var ball1 = get_tree().root.get_node("Main/Ball")
+			# spawn above paddle, not based on Main/Ball
+			var paddle := get_tree().root.get_node("Main/Player") as Node2D
+			if paddle == null:
+				return
+
 			var extra_ball = ball_scene.instantiate()
 			var main := get_tree().root.get_node("Main")
 			main.add_child(extra_ball)
-			extra_ball.scale *=3
-			extra_ball.global_position = ball1.global_position
+
+			var spawn_offset := Vector2(0, -50)
+			extra_ball.global_position = paddle.global_position + spawn_offset
+			extra_ball.scale *= 3
+			if extra_ball.has_method("launch"):
+				extra_ball.launch(Vector2(0, -1))
 	},
 	{
 		"name": "Iron Balls",
 		"apply": func() -> void:
-			var ball = get_tree().root.get_node("Main/Ball")
-			ball.enable_heavy_mode()
-			
+			var balls := get_tree().get_nodes_in_group("ball")
+			for b in balls:
+				if b.has_method("enable_heavy_mode"):
+					b.enable_heavy_mode()
 	},
 	{
 		"name": "Upgrade 5",
 		"apply": func() -> void:
-			pass	
+			pass
 	},
 	{
 		"name": "Upgrade 6",
 		"apply": func() -> void:
-			pass	
+			pass
 	}
-]	
+]
+	
 
 func _roll_random_upgrades() -> void:
 	# ensure at least 3 upgrades in pool

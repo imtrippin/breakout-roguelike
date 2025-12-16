@@ -25,7 +25,8 @@ func hit():
 	var bricks_left = get_tree().get_nodes_in_group("brick")
 	
 	if bricks_left.size() <= 1:
-		get_parent().get_node("Ball").is_active = false
+		for b in get_tree().get_nodes_in_group("ball"):
+			b.is_active = false
 		await get_tree().create_timer(1).timeout
 		get_tree().root.get_node("Main").next_level()
 	else:
