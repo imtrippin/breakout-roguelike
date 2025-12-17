@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1765868319
+::res://::1765919395
 export_presets.cfg::TextFile::-1::1765486838::0::1::::<><><>0<>0<><>::
 ::res://art/::1765863231
 ammo_orange_ball_small.png::CompressedTexture2D/CompressedTexture2D::2626205296436417620::1763506499::1763506499::1::::<><><>0<>0<>ebff22d64949d9b5d6048a06b41198ef<>res://.godot/imported/ammo_orange_ball_small.png-f971ce2e6f9c3cb56fe7d3ec02193fe7.ctex::
@@ -26,30 +26,30 @@ crt_fullscreen_shader.gdshader::Shader::6934128384047409862::1765863263::0::1:::
 iron_balls.gdshader::Shader::5397824334138175003::1765863263::0::1::::<><><>0<>0<><>::
 lava.gdshader::Shader::51252960130791951::1765863263::0::1::::<><><>0<>0<><>::
 night_sky.gdshader::Shader::3402535747754604103::1765863263::0::1::::<><><>0<>0<><>::
-::res://player/::1765863263
+::res://player/::1765869123
 paddle_glow.gdshader::Shader::6188390875015127463::1765863263::0::1::::<><><>0<>0<><>::
-plane.gd::GDScript::2465899344104359798::1765829195::0::1::::<>CharacterBody2D<><>0<>0<><>::
+plane.gd::GDScript::2465899344104359798::1765869123::0::1::::<>CharacterBody2D<><>0<>0<><>::
 player.tscn::PackedScene::674371842830086056::1765827998::0::1::::<><><>0<>0<><>::uid://bberachwpabs5::::res://player/plane.gd<>uid://cufx5m8efa3bf::::res://player/paddle_glow.gdshader<>uid://cm4du50urfpoy::::res://art/bb.png<>uid://dxgommnbkl4e6::::res://audio/plunk.wav
-::res://projectile/::1765867414
+::res://projectile/::1765869229
 ball.tscn::PackedScene::8019474973933781672::1765867414::0::1::::<><><>0<>0<><>::uid://dis1ry6xbrqxo::::res://projectile/energy_core_ball.gdshader<>uid://bn4l5my1oviuj::::res://projectile/projectile.gd<>uid://dk3ukx5bes13c::::res://art/circle2.png<>uid://cnwq5g6g3ulxe::::res://audio/plink.wav
-projectile.gd::GDScript::3359464735149206297::1765867414::0::1::::<>CharacterBody2D<><>0<>0<><>::
 energy_core_ball.gdshader::Shader::7759541909561328404::1765867196::0::1::::<><><>0<>0<><>::
+projectile.gd::GDScript::3359464735149206297::1765869229::0::1::::<>CharacterBody2D<><>0<>0<><>::
 trail.gdshader::Shader::3060082353982670054::1765864113::0::1::::<><><>0<>0<><>::
-::res://scenes/::1765868542
+::res://scenes/::1765892028
 area_2d.gd::GDScript::806838445991475296::1765848581::0::1::::<>Area2D<><>0<>0<><>::
-brick.tscn::PackedScene::2876296871568944839::1765819845::0::1::::<><><>0<>0<><>::uid://bd1n78d0hyrlu::::res://scripts/brick.gd<>uid://yx6im2rwekms::::res://art/brick.png<>uid://cxee18ke288f8::::res://audio/dink.wav
+brick.tscn::PackedScene::2876296871568944839::1765868733::0::1::::<><><>0<>0<><>::uid://bd1n78d0hyrlu::::res://scripts/brick.gd<>uid://yx6im2rwekms::::res://art/brick.png<>uid://b4f12l5hk8dk7::::res://audio/Score Count Up Single.wav
 combo_manager.gd::GDScript::3854614114657165921::1765393594::0::1::::<>Node<><>0<>0<><>::
 combo_manager.tscn::PackedScene::2086652028140389051::1765837262::0::1::::<><><>0<>0<><>::uid://bu6g6wt5x3x26::::res://scenes/combo_manager.gd<>uid://b8tnrbyw6v3i2::::res://art/pixel2.ttf<>uid://bi0he5v7mxrpr::::res://audio/Cozy UI D5.wav
 game_manager.tscn::PackedScene::6992117043221408445::1765867958::0::1::::<><><>0<>0<><>::uid://b47he4ek2nvsg::::res://scripts/game_manager.gd<>uid://b8tnrbyw6v3i2::::res://art/pixel2.ttf<>uid://p37pmo0d5pu2::::res://scenes/xp_bar.gdshader
 lava.tscn::PackedScene::7796754419035161546::1765193182::0::1::::<><><>0<>0<><>::uid://y3em38tufed::::res://materials_and_shaders/lava.gdshader
-main.tscn::PackedScene::339449435950276292::1765868531::0::1::::<><><>0<>0<><>::uid://cs1sjn688636y::::res://scripts/level.gd<>uid://boqhjcimonddn::::res://materials_and_shaders/night_sky.gdshader<>uid://juw2nogud4im::::res://player/player.tscn<>uid://dmixt027aj03e::::res://projectile/ball.tscn<>uid://4y14bjgehtlb::::res://scenes/combo_manager.tscn<>uid://lq3rndd4751e::::res://scenes/area_2d.gd<>uid://c8lyiwto3ir1u::::res://scenes/pause_menu.tscn<>uid://c0uwq5lyg3110::::res://scenes/main_menu.tscn<>uid://clmw3875hyui0::::res://scenes/upgrade_menu.tscn
+main.tscn::PackedScene::339449435950276292::1765892028::0::1::::<><><>0<>0<><>::uid://cs1sjn688636y::::res://scripts/level.gd<>uid://boqhjcimonddn::::res://materials_and_shaders/night_sky.gdshader<>uid://juw2nogud4im::::res://player/player.tscn<>uid://dmixt027aj03e::::res://projectile/ball.tscn<>uid://4y14bjgehtlb::::res://scenes/combo_manager.tscn<>uid://lq3rndd4751e::::res://scenes/area_2d.gd<>uid://c8lyiwto3ir1u::::res://scenes/pause_menu.tscn<>uid://c0uwq5lyg3110::::res://scenes/main_menu.tscn<>uid://clmw3875hyui0::::res://scenes/upgrade_menu.tscn
 main_menu.gd::GDScript::1412817792029016343::1765485615::0::1::::<>Control<><>0<>0<><>::
 main_menu.tscn::PackedScene::6570215953754500341::1765868542::0::1::::<><><>0<>0<><>::uid://uem5xos4wmbf::::res://scenes/main_menu.gd<>uid://b8tnrbyw6v3i2::::res://art/pixel2.ttf<>uid://bvlrvl4ne6xj6::::res://scripts/button.gd<>uid://6enlwfh2mi4i::::res://audio/UI Accept 005.wav<>uid://dlp8yim8wur0f::::res://audio/UI Accept 006.wav
 pause_menu.gd::GDScript::2282587652530514518::1765394105::0::1::::<>Control<><>0<>0<><>::
 pause_menu.tscn::PackedScene::7113254042452398028::1765394105::0::1::::<><><>0<>0<><>::uid://7rx5dh2y4631::::res://scenes/pause_menu.gd<>uid://b8tnrbyw6v3i2::::res://art/pixel2.ttf<>uid://bvlrvl4ne6xj6::::res://scripts/button.gd<>uid://6enlwfh2mi4i::::res://audio/UI Accept 005.wav<>uid://dlp8yim8wur0f::::res://audio/UI Accept 006.wav
-xp_bar.gdshader::Shader::1112605615409815103::1765865672::0::1::::<><><>0<>0<><>::
 upgrade_menu.gd::GDScript::4411255946191238199::1765847782::0::1::::<>Control<><>0<>0<><>::
 upgrade_menu.tscn::PackedScene::5571078740601154793::1765814712::0::1::::<><><>0<>0<><>::uid://b3330gr7obnvr::::res://scenes/upgrade_menu.gd<>uid://bvlrvl4ne6xj6::::res://scripts/button.gd<>uid://b8tnrbyw6v3i2::::res://art/pixel2.ttf<>uid://6enlwfh2mi4i::::res://audio/UI Accept 005.wav<>uid://dlp8yim8wur0f::::res://audio/UI Accept 006.wav
+xp_bar.gdshader::Shader::1112605615409815103::1765865672::0::1::::<><><>0<>0<><>::
 ::res://scripts/::1765867612
 brick.gd::GDScript::2651509241574844382::1765867612::0::1::::<>RigidBody2D<><>0<>0<><>::
 button.gd::GDScript::3884164869088902213::1765394894::0::1::::<>Button<><>0<>0<><>::
