@@ -90,13 +90,6 @@ script = ExtResource("6_85g3d")
 position = Vector2(576, 658)
 shape = SubResource("RectangleShape2D_7mycd")
 
-[node name="PauseMenu" parent="." instance=ExtResource("6_tefeu")]
-visible = true
-offset_left = 571.0
-offset_top = 293.0
-offset_right = 571.0
-offset_bottom = 293.0
-
 [node name="MainMenu" parent="." instance=ExtResource("7_o6xl0")]
 process_mode = 3
 offset_left = 528.0
@@ -104,6 +97,13 @@ offset_top = 257.0
 offset_right = 528.0
 offset_bottom = 257.0
 size_flags_horizontal = 4
+
+[node name="PauseMenu" parent="." instance=ExtResource("6_tefeu")]
+visible = true
+offset_left = 571.0
+offset_top = 293.0
+offset_right = 571.0
+offset_bottom = 293.0
 
 [node name="UpgradeMenu" parent="." instance=ExtResource("8_tipki")]
 anchors_preset = 8
