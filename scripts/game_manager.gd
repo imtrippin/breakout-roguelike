@@ -44,13 +44,9 @@ func _on_level_up(_level: int) -> void:
 	if menu:
 		menu.open_menu()
 
-
-# ---- BALL TRACKING ----
-
 func register_ball(ball: Node) -> void:
 	ball_count += 1
 	print("balls in play:", ball_count, "added:", ball, "id:", ball.get_instance_id())
-
 
 func unregister_ball() -> void:
 	ball_count -= 1

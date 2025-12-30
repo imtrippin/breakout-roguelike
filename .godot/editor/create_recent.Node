@@ -1,3 +1,5 @@
+Button
+HBoxContainer
 ColorRect
 Sprite2D
 Line2D
@@ -6,8 +8,6 @@ Label
 AudioStreamPlayer2D
 CharacterBody2D
 StaticBody2D
-HBoxContainer
-Button
 Panel
 CPUParticles2D
 BoxContainer

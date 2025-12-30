@@ -42,12 +42,14 @@ func _build_upgrade_pool() -> void:
 	all_upgrades = [
 	{
 		"name": "Wider Paddle",
+		#"icon": preload("none"),
 		"apply": func() -> void:
 			var paddle = get_tree().root.get_node("Main/Player")
 			paddle.upgrade_width(1.2)
 	},
 	{
 		"name": "Bigger Ball",
+		#"icon": preload("none"),
 		"apply": func() -> void:
 			var balls := get_tree().get_nodes_in_group("ball")
 			for b in balls:
@@ -56,6 +58,7 @@ func _build_upgrade_pool() -> void:
 	},
 	{
 		"name": "Extra Ball",
+		#"icon": preload("none"),
 		"apply": func() -> void:
 			# spawn above paddle, not based on Main/Ball
 			var paddle := get_tree().root.get_node("Main/Player") as Node2D
@@ -74,6 +77,7 @@ func _build_upgrade_pool() -> void:
 	},
 	{
 		"name": "Iron Balls",
+		#"icon": preload("none"),
 		"apply": func() -> void:
 			var balls := get_tree().get_nodes_in_group("ball")
 			for b in balls:
@@ -81,9 +85,13 @@ func _build_upgrade_pool() -> void:
 					b.enable_heavy_mode()
 	},
 	{
-		"name": "Upgrade 5",
+		"name": "Chain Lightning",
+		#"icon": preload("none"),
 		"apply": func() -> void:
-			pass
+			var balls := get_tree().get_nodes_in_group("ball")
+			for b in balls:
+				if b.has_method("enable_chain_lightning"):
+					b.enable_chain_lightning()
 	},
 	{
 		"name": "Upgrade 6",
