@@ -14,8 +14,11 @@ shader_parameter/line_speed = 2.0
 shader_parameter/line_strength = 0.7
 shader_parameter/blue_threshold = 0.2
 shader_parameter/blue_softness = 0.15
-shader_parameter/flash_color = Color(1.8, 1.8, 1.8, 1)
+shader_parameter/impact_color = Color(1.6, 1.6, 1.8, 1)
 shader_parameter/flash_amount = 0.0
+shader_parameter/impact_uv = Vector2(0.5, 0.5)
+shader_parameter/impact_radius = 0.25
+shader_parameter/impact_softness = 0.4
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4x4bl"]
 radius = 8.0

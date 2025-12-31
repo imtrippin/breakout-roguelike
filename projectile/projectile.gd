@@ -106,8 +106,7 @@ func _bounce_off_paddle(paddle: Node2D) -> void:
 	velocity.x += paddle_vel_x * 0.25
 	velocity = velocity.normalized() * speed_now
 	
-
-func _trigger_chain_lightning(start_brick: Node2D, jumps: int = 3, range: float = 150.0) -> void:
+func _trigger_chain_lightning(start_brick: Node2D, jumps: int = 3, ranges: float = 150.0) -> void:
 	if !is_instance_valid(start_brick):
 		return
 
@@ -115,7 +114,7 @@ func _trigger_chain_lightning(start_brick: Node2D, jumps: int = 3, range: float 
 	var remaining := jumps
 
 	while remaining > 0:
-		var next := _get_closest_brick(current_pos, range)
+		var next := _get_closest_brick(current_pos, ranges)
 		if next == null:
 			break
 
@@ -134,9 +133,9 @@ func _trigger_chain_lightning(start_brick: Node2D, jumps: int = 3, range: float 
 		await get_tree().create_timer(0.05).timeout
 
 
-func _get_closest_brick(from_pos: Vector2, range: float) -> Node2D:
+func _get_closest_brick(from_pos: Vector2, ranges: float) -> Node2D:
 	var closest: Node2D = null
-	var closest_dist := range
+	var closest_dist := ranges
 
 	for b in get_tree().get_nodes_in_group("brick"):
 		if !is_instance_valid(b):

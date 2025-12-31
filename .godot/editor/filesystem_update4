@@ -15,3 +15,5 @@ res://projectile/ball.tscn
 res://scripts/game_manager.gd
 res://scenes/main.tscn
 res://scenes/main_menu.tscn
+res://player/player.tscn
+res://player/plane.gd
