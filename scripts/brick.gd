@@ -10,7 +10,6 @@ func hit():
 	if is_dead:
 		return
 	is_dead = true
-	
 	GameManager.add_points(1)
 	combo_manager.register_brick_hit()
 	$AudioStreamPlayer2D.pitch_scale = randf_range(.5, 1.5)

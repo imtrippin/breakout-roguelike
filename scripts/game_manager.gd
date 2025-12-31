@@ -4,6 +4,7 @@ extends Node
 
 var score: int = 0
 var level: int = 1
+var xp_multiplier: int = 1
 var _displayed_fill: float = 0.0
 var ball_count: int = 0   # how many balls are currently alive
 
@@ -18,7 +19,7 @@ func reset_run() -> void:
 	score = 0
 	level = 1
 	ball_count = 0
-
+	xp_multiplier = 1
 	ProgressionManager.level = 1
 	ProgressionManager.xp = 0
 	ProgressionManager.xp_to_level = 10
@@ -26,7 +27,7 @@ func reset_run() -> void:
 	_update_xp_bar(true)
 	
 func add_points(points: int) -> void:
-	score += points
+	score += points * xp_multiplier
 	ProgressionManager.add_xp(points)
 
 
@@ -63,6 +64,9 @@ func game_over() -> void:
 	print("GAME OVER")
 	reset_run()
 	get_tree().reload_current_scene()
+	
+func enable_double_xp() -> void:
+	xp_multiplier = 2.0
 	
 func _update_xp_bar(force := false) -> void:
 	var target_fill := 0.0

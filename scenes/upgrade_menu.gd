@@ -14,7 +14,6 @@ extends Control
 var all_upgrades: Array = []
 var current_choices: Array = []
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_build_upgrade_pool()
 	
@@ -94,9 +93,9 @@ func _build_upgrade_pool() -> void:
 					b.enable_chain_lightning()
 	},
 	{
-		"name": "Upgrade 6",
+		"name": "Double XP",
 		"apply": func() -> void:
-			pass
+			GameManager.enable_double_xp()
 	}
 ]
 	

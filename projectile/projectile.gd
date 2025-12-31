@@ -62,7 +62,6 @@ func _physics_process(delta: float) -> void:
 func _play_wall_hit_sound() -> void:
 	wall_hit_sound.play()
 
-
 func die_in_void() -> void:
 	if not is_active:
 		return
@@ -80,12 +79,10 @@ func launch(direction: Vector2) -> void:
 func enable_heavy_mode() -> void:
 	heavy_mode = true
 
-
 func enable_chain_lightning() -> void:
 	chain_lightning = true
 	chain_lightning_unlocked = true
-
-
+	
 func _bounce_off_paddle(paddle: Node2D) -> void:
 	var paddle_width := 100.0 # ideally match your paddle sprite width
 

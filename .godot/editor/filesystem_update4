@@ -1,0 +1,17 @@
+res://scenes/upgrade_menu.tscn
+res://scenes/xp_bar.gdshader
+res://materials_and_shaders/night_sky.gdshader
+res://player/paddle_glow.gdshader
+res://projectile/energy_core_ball.gdshader
+res://materials_and_shaders/lava.gdshader
+res://materials_and_shaders/brick.gdshader
+res://materials_and_shaders/iron_balls.gdshader
+res://materials_and_shaders/crt_fullscreen_shader.gdshader
+res://projectile/trail.gdshader
+res://scenes/upgrade_menu.gd
+res://projectile/projectile.gd
+res://scripts/brick.gd
+res://projectile/ball.tscn
+res://scripts/game_manager.gd
+res://scenes/main.tscn
+res://scenes/main_menu.tscn
